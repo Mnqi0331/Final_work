@@ -1,0 +1,465 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-family: 微軟正黑體;
+  font-weight: 700;
+}
+.box {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  border-top-left-radius: 90%;
+  border-top-right-radius: 80%;
+  background: #16262e;
+}
+.star {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  margin-bottom: 50px;
+  background-image: -webkit-gradient(
+      radial,
+      50% 50%,
+      2,
+      50% 50%,
+      20,
+      from(white),
+      color-stop(0.1, rgba(255, 255, 255, 0.2)),
+      to(transparent)
+    ),
+    -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 15, from(white), color-stop(0.1, rgba(255, 255, 255, 0.15)), to(transparent)),
+    -webkit-gradient(radial, 50% 50%, 1, 50% 50%, 20, from(rgba(255, 255, 255, 0.9)), color-stop(0.05, rgba(255, 255, 255, 0.1)), to(transparent)),
+    -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 15, from(rgba(255, 255, 255, 0.4)), color-stop(0.03, rgba(255, 255, 255, 0.05)), to(transparent));
+
+  background-size: 350px 310px, 160px 200px, 120px 130px, 80px 100px;
+  background-position: 20px 5, 40px 3, 10px 7;
+
+  animation-name: fade;
+  animation-direction: alternate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.lighthouse {
+  z-index: 50;
+  position: fixed;
+  width: 180px;
+  height: 800px;
+  margin-left: 480px;
+  /*background:black;*/
+}
+.flag {
+  position: fixed;
+  width: 180px;
+  height: 200px;
+}
+.f {
+  z-index: 180;
+  position: fixed;
+  width: 180px;
+  height: 100px;
+  animation: rotateX 1s alternate infinite;
+}
+.fl {
+  border-top: 20px solid white;
+  border-bottom: 20px solid #16262e;
+  border-left: 35px solid #902923;
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 3px;
+}
+.fr {
+  border-top: 20px solid white;
+  border-bottom: 20px solid #16262e;
+  border-right: 35px solid #902923;
+  display: inline-block;
+}
+.g {
+  z-index: 150;
+  position: fixed;
+  width: 12px;
+  height: 80px;
+  background: #484349;
+  margin-left: 81px;
+  box-shadow: inset 5px 0 20px rgba(0, 0, 0, 0.4);
+}
+.top {
+  z-index: 100;
+  position: fixed;
+  width: 190px;
+  height: 100px;
+  margin-top: 180px;
+}
+.fence_s {
+  z-index: 120;
+  float: left;
+  width: 25px;
+  height: 50px;
+  background: #cd4631;
+  margin-top: 70px;
+  margin-left: 4.5px;
+  border-radius: 15%;
+  box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.25);
+}
+.fence_l {
+  z-index: 120;
+  position: fixed;
+  width: 178px;
+  height: 20px;
+  background: #484349;
+  margin-top: 100px;
+  margin-left: 2px;
+  border-radius: 10%;
+}
+.light_head {
+  z-index: 80;
+  position: fixed;
+  background: #cd4631;
+  width: 120px;
+  height: 70px;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  margin-left: 30px;
+  margin-top: 80px;
+  box-shadow: inset 40px 0 20px rgba(0, 0, 0, 0.3);
+}
+.head_l {
+  z-index: 120;
+  position: fixed;
+  background: #484349;
+  width: 168px;
+  height: 20px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  margin-left: 5px;
+  margin-top: 140px;
+  box-shadow: inset 50px 0 20px rgba(0, 0, 0, 0.3);
+}
+.mid {
+  z-index: 50;
+  position: fixed;
+  width: 160px;
+  height: 300px;
+  background: #f7f0f0;
+  margin-left: 10px;
+  margin-top: 150px;
+  border-top-left-radius: 15%;
+  border-top-right-radius: 15%;
+  box-shadow: inset 40px 0 20px rgba(0, 0, 0, 0.2);
+}
+.window {
+  z-index: 150;
+  position: fixed;
+  width: 50px;
+  height: 70px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.window2 {
+  z-index: 150;
+  position: fixed;
+  width: 50px;
+  height: 70px;
+  margin-top: 190px;
+  margin-left: 80px;
+}
+.light {
+  z-index: 200;
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f4d35e;
+  margin-top: 10px;
+  margin-left: 5px;
+  opacity: 0.7;
+  animation-name: fade;
+  animation-direction: alternate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+.light2 {
+  z-index: 200;
+  position: fixed;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #f4d35e;
+  margin-top: 180px;
+  margin-left: 70px;
+  opacity: 0.7;
+  animation-name: fade;
+  animation-direction: alternate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.w {
+  z-index: 180;
+  float: left;
+  width: 23px;
+  height: 33px;
+  margin-left: 2px;
+  margin-top: 2px;
+  background: #ff9b54;
+  box-shadow: inset 20px 0 20px rgba(0, 0, 0, 0.2);
+}
+.light_w {
+  z-index: 200;
+  position: fixed;
+  width: 120px;
+  height: 40px;
+}
+.lc {
+  z-index: 200;
+  float: left;
+  width: 25px;
+  height: 25px;
+  background: #521c14;
+  border-radius: 30%;
+  margin-left: 12px;
+  margin-top: 40px;
+}
+.buttom {
+  z-index: 100;
+  position: fixed;
+  width: 230px;
+  height: 50px;
+  background: #f7f0f0;
+  margin-left: 1px;
+  margin-top: 425px;
+  border-top-left-radius: 15%;
+  border-top-right-radius: 15%;
+  box-shadow: inset 40px 0 20px rgba(0, 0, 0, 0.2);
+}
+.ground {
+  z-index: 100;
+  position: fixed;
+  background: #34403a;
+  width: 800px;
+  height: 60px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-top: 458px;
+}
+.ground2 {
+  z-index: 80;
+  position: fixed;
+  background: #34403a;
+  width: 800px;
+  height: 60px;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 30%;
+  margin-top: 480px;
+}
+.TREE {
+  z-index: 50;
+  position: fixed;
+  width: 850px;
+  height: 240px;
+  margin-top: 240px;
+}
+.tree {
+  z-index: 50;
+  float: left;
+  width: 260px;
+  height: 220px;
+  margin-left: 15px;
+  margin-top: 25px;
+}
+.t {
+  z-index: 100;
+  position: fixed;
+  background: #285238;
+  width: 50px;
+  height: 80px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-left: 20px;
+  margin-top: 140px;
+  animation: rotate 2s alternate infinite;
+}
+.t2 {
+  z-index: 70;
+  position: fixed;
+  background: #285238;
+  width: 50px;
+  height: 100px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-top: 120px;
+  margin-left: 60px;
+  transform: scale(1.5, 1.5);
+  animation: rotate 2s alternate infinite;
+}
+.t3 {
+  z-index: 70;
+  position: fixed;
+  background: #285238;
+  width: 50px;
+  height: 100px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-top: 120px;
+  margin-left: 150px;
+  transform: scale(0.5, 0.5);
+  animation: rotate2 3s alternate infinite;
+}
+.t4 {
+  z-index: 70;
+  position: fixed;
+  background: #285238;
+  width: 50px;
+  height: 100px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-top: 120px;
+  margin-left: 18 5px;
+  animation: rotate2 1.5s alternate infinite;
+}
+.cloud {
+  z-index: 250;
+  position: fixed;
+  width: 150px;
+  height: 100px;
+  margin-top: 2px;
+  transform: scale(0.5, 0.5);
+  animation: move 50s alternate infinite;
+  opacity: 20%;
+}
+.cloud2 {
+  z-index: 250;
+  position: fixed;
+  width: 150px;
+  height: 100px;
+  margin-top: 200px;
+  margin-left: 380px;
+  transform: scale(1, 1);
+  transform: rotateX(180deg);
+  animation: move 50s alternate infinite;
+}
+.cloud3 {
+  z-index: 250;
+  position: fixed;
+  width: 150px;
+  height: 100px;
+  margin-top: 200px;
+  margin-left: 330px;
+  transform: scale(1, 1);
+  transform: rotateX(180deg);
+  animation: move 50s alternate infinite;
+}
+.cloud4 {
+  z-index: 250;
+  position: fixed;
+  width: 150px;
+  height: 100px;
+  margin-top: 250px;
+  margin-left: 100px;
+  transform: scale(0.7, 0.7);
+  animation: move 50s alternate infinite;
+  opacity: 50%;
+}
+.c {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: white;
+  margin-top: 90px;
+  margin-left: 40px;
+}
+.cs {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  margin-top: 70px;
+  margin-left: 100px;
+}
+.cm {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  margin-top: 120px;
+  margin-left: 160px;
+}
+.cb {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  margin-top: 80px;
+  margin-left: 100px;
+}
+.string_light {
+  width: 515px;
+  height: 80px;
+  background: #bdfffd;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  margin-top: 80px;
+  opacity: 50%;
+  background: -webkit-linear-gradient(left, white, #bdfffd);
+  background: -o-linear-gradient(right, white, #bdfffd);
+  background: -moz-linear-gradient(right, white, #bdfffd);
+  background: linear-gradient(to right, white, #bdfffd);
+  animation: fade 5s alternate infinite;
+}
+@keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+@keyframes rotate2 {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+@keyframes rotateX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes move {
+  0% {
+    left: -20%;
+  }
+
+  100% {
+    left: 50%;
+  }
+}
